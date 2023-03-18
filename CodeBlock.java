@@ -8,10 +8,18 @@ public abstract class CodeBlock {
     private int maxInboundCount;
     private int maxOutboundCount;
 
-    public CodeBlock(Drawable shape, ArrayList<CodeBlock> inboundCodeBlocks, ArrayList<CodeBlock> outboundCodeBlocks) {
+    public CodeBlock(
+            Drawable shape,
+            ArrayList<CodeBlock> inboundCodeBlocks,
+            ArrayList<CodeBlock> outboundCodeBlocks,
+            int maxInboundCount,
+            int maxOutboundCount
+    ) {
         this.shape = shape;
         this.inboundCodeBlocks = inboundCodeBlocks;
         this.outboundCodeBlocks = outboundCodeBlocks;
+        this.maxInboundCount = maxInboundCount;
+        this.maxOutboundCount = maxOutboundCount;
     }
 
     public void setCenter(int x, int y) {
