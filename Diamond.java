@@ -1,9 +1,20 @@
 import java.awt.*;
 
+/**
+ * Diamond of width 100px and height of 40px
+ * @author Patrick Whitlock
+ * @author Aaron Bettencourt
+ */
 public class Diamond extends Shape {
     private final int width = 100;
     private final int height = 40;
 
+    /**
+     * Creates a Diamond object
+     * @param color Color in which to draw the shape
+     * @param location point at which the shape is located
+     * @param label String of text to be drawn on the shape
+     */
     public Diamond(Color color, Point location, String label) {
         super(color, location,100,40, label);
     }

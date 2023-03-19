@@ -1,9 +1,21 @@
 import java.awt.*;
 
+/**
+ * Rectangle of width 100px, height of 40px
+ * @author Patrick Whitlock
+ * @author Aaron Bettencourt
+ * @author Ashton Alonge
+ */
 public class Rectangle extends Shape {
     private final int width = 100;
     private final int height = 40;
 
+    /**
+     * Creates a rectangle object
+     * @param color Color in which to draw the shape
+     * @param location point at which the shape is located
+     * @param label String of text to be drawn on the shape
+     */
     public Rectangle(Color color, Point location, String label) {
         super(color, location,100,40, label);
     }
