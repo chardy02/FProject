@@ -16,12 +16,10 @@ public class Parallelogram extends Shape {
      * Creates a parallelogram object
      * @param color Color in which to draw the shape
      * @param location point at which the shape is located
-     * @param width how many pixels wide the shape is
-     * @param height how many pixels high the shape is
      * @param text String of text to be drawn on the shape
      */
-    public Parallelogram(Color color, Point location, int width, int height, String text) {
-        super(color, location, width, height, text);
+    public Parallelogram(Color color, Point location, String text) {
+        super(color, location, 100, 40, text);
     }
 
     /**
