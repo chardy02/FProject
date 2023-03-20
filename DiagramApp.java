@@ -11,7 +11,6 @@ public class DiagramApp extends JFrame {
         JMenuBar menuBar = new JMenuBar();
         WorkingArea drawPanel = new WorkingArea();
         StatusBar statusBar = new StatusBar("Status");
-
         Repository.getInstance().addObserver(drawPanel);
         Repository.getInstance().addObserver(statusBar);
 
