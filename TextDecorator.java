@@ -14,8 +14,9 @@ public class TextDecorator extends DrawableDecorator {
     @Override
     public void draw(Graphics g) {
         int textWidth = g.getFontMetrics().stringWidth(text);
+        g.setColor(getInnerDrawable().getColor());
+        getInnerDrawable().draw(g);
         g.setColor(Color.BLACK);
         g.drawString(text,  (getXCenter() - textWidth / 2), getYCenter());
-        getInnerDrawable().draw(g);
     }
 }

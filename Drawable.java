@@ -7,4 +7,6 @@ public interface Drawable {
 
     public void setXCenter(int xCenter);
     public void setYCenter(int yCenter);
+
+    public Color getColor();
 }

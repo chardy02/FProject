@@ -1,3 +1,5 @@
+import java.awt.*;
+
 public abstract class DrawableDecorator implements Drawable {
     private Drawable innerDrawable;
 
@@ -11,7 +13,6 @@ public abstract class DrawableDecorator implements Drawable {
     public Drawable getInnerDrawable(){
         return innerDrawable;
     }
-
     @Override
     public int getXCenter() {
         return innerDrawable.getXCenter();
@@ -29,5 +30,10 @@ public abstract class DrawableDecorator implements Drawable {
     @Override
     public void setYCenter(int yCenter) {
         innerDrawable.setXCenter(yCenter);
+    }
+
+    @Override
+    public Color getColor() {
+        return innerDrawable.getColor();
     }
 }
