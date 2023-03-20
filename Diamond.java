@@ -23,25 +23,24 @@ public class Diamond extends Shape {
      * @param g Graphics in which to draw the shape with
      */
     public void draw(Graphics g) {
-        Point top = new Point();
-        Point left = new Point();
-        Point right = new Point();
-        Point bottom = new Point();
+        int xPoly[] = {0,0,0,0}; //Top, right, bottom, left
+        int yPoly[] = {0,0,0,0};
 
         //calculate halfway points
-        top.x = getXCenter();
-        top.y = getYCenter() - getHeight() / 2;
-        left.x = getXCenter() - (getWidth() / 2);
-        left.y = getYCenter();
-        right.x = getXCenter() + getWidth() / 2;
-        right.y = getYCenter();
-        bottom.x = getXCenter();
-        bottom.y = getYCenter() + getHeight() / 2;
+        xPoly[0] = getXCenter();
+        yPoly[0] = getYCenter() - getHeight() / 2;
+
+        xPoly[1] = getXCenter() + getWidth() / 2;
+        yPoly[1] = getYCenter();
+
+        xPoly[2] = getXCenter();
+        yPoly[2] = getYCenter() + getHeight() / 2;
+
+        xPoly[3] = getXCenter() - (getWidth() / 2);
+        yPoly[3] = getYCenter();
 
         g.setColor(getColor());
-        g.drawLine(left.x,left.y,top.x,top.y);
-        g.drawLine(top.x,top.y,right.x,right.y);
-        g.drawLine(right.x,right.y,bottom.x,bottom.y);
-        g.drawLine(bottom.x,bottom.y,left.x,left.y);
+        Polygon polygon = new Polygon(xPoly,yPoly,xPoly.length);
+        g.fillPolygon(polygon);
     }
 }
