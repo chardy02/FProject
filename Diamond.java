@@ -6,14 +6,17 @@ import java.awt.*;
  * @author Aaron Bettencourt
  */
 public class Diamond extends Shape {
+    private final int width = 100;
+    private final int height = 40;
 
     /**
      * Creates a Diamond object
      * @param color Color in which to draw the shape
+     * @param location point at which the shape is located
+     * @param label String of text to be drawn on the shape
      */
-
-    public Diamond(int xPosCenter, int yPosCenter, int width, int height, Color color) {
-        super(xPosCenter, yPosCenter,width,height, color);
+    public Diamond(Color color, Point location, String label) {
+        super(color, location,100,40, label);
     }
 
     /**
@@ -23,24 +26,29 @@ public class Diamond extends Shape {
      * @param g Graphics in which to draw the shape with
      */
     public void draw(Graphics g) {
-        int xPoly[] = {0,0,0,0}; //Top, right, bottom, left
-        int yPoly[] = {0,0,0,0};
+        super.draw(g);
+        Point top = new Point();
+        Point left = new Point();
+        Point right = new Point();
+        Point bottom = new Point();
 
         //calculate halfway points
-        xPoly[0] = getXCenter();
-        yPoly[0] = getYCenter() - getHeight() / 2;
+        top.x = super.getLocation().x;
+        top.y = super.getLocation().y - height / 2;
+        left.x = super.getLocation().x - (width / 2);
+        left.y = super.getLocation().y;
+        right.x = super.getLocation().x + width / 2;
+        right.y = super.getLocation().y;
+        bottom.x = super.getLocation().x;
+        bottom.y = super.getLocation().y + height / 2;
 
-        xPoly[1] = getXCenter() + getWidth() / 2;
-        yPoly[1] = getYCenter();
+        g.drawLine(left.x,left.y,top.x,top.y);
+        g.drawLine(top.x,top.y,right.x,right.y);
+        g.drawLine(right.x,right.y,bottom.x,bottom.y);
+        g.drawLine(bottom.x,bottom.y,left.x,left.y);
 
-        xPoly[2] = getXCenter();
-        yPoly[2] = getYCenter() + getHeight() / 2;
-
-        xPoly[3] = getXCenter() - (getWidth() / 2);
-        yPoly[3] = getYCenter();
-
-        g.setColor(getColor());
-        Polygon polygon = new Polygon(xPoly,yPoly,xPoly.length);
-        g.fillPolygon(polygon);
+        int textWidth = g.getFontMetrics().stringWidth(super.getLabel());
+        g.setColor(Color.BLACK);
+        g.drawString(super.getLabel(),super.getLocation().x-5,super.getLocation().y+3);
     }
 }

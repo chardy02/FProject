@@ -7,17 +7,25 @@ import java.awt.*;
  * @author Ashton Alonge
  */
 public class Rectangle extends Shape {
+    private final int width = 100;
+    private final int height = 40;
 
     /**
      * Creates a rectangle object
      * @param color Color in which to draw the shape
+     * @param location point at which the shape is located
+     * @param label String of text to be drawn on the shape
      */
-    public Rectangle(int xPosCenter, int yPosCenter, int width, int height, Color color) {
-        super(xPosCenter, yPosCenter,width,height, color);
+    public Rectangle(Color color, Point location, String label) {
+        super(color, location,100,40, label);
     }
 
     public void draw(Graphics g) {
-        g.setColor(getColor());
-        g.fillRect(getXCenter() - getWidth() / 2,getYCenter() - getHeight() / 2, getWidth(), getHeight());
+        super.draw(g);
+        g.fillRect(super.getLocation().x - width / 2,super.getLocation().y - height / 2,width,height);
+
+        //int textWidth = g.getFontMetrics().stringWidth(super.getLabel());
+        g.setColor(Color.BLACK);
+        g.drawString(super.getLabel(),super.getLocation().x-15,super.getLocation().y+5);
     }
 }

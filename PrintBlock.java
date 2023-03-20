@@ -11,7 +11,9 @@ public class PrintBlock extends CodeBlock {
      * @param xPosCenter x location
      * @param yPosCenter y location
      */
-    public PrintBlock(Drawable wrapper) {
-        super(wrapper, 1, 1);
+    public PrintBlock(int xPosCenter, int yPosCenter) {
+        Parallelogram parallelogram = new Parallelogram(Color.ORANGE,new Point(xPosCenter,yPosCenter),"");
+        TextDecorator textDecorator = new TextDecorator(parallelogram, "PRINT");
+        super(textDecorator, 1, 2);
     }
 }
