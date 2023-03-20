@@ -116,6 +116,10 @@ public class MenuBarControlHandler implements ActionListener {
                     System.out.println("Variable");
                     Repository.getInstance().setSelectedCodeBlock("Variable");
                     break;
+                case "Connection":
+                    System.out.println("Connection");
+                    Repository.getInstance().setSelectedCodeBlock("Connection");
+                    break;
 
             }
         }

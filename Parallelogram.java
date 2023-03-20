@@ -29,14 +29,18 @@ public class Parallelogram extends Shape {
     public void draw(Graphics g) {
         super.draw(g);
         parallelogram = new Path2D.Double();
-        parallelogram.moveTo(getXCenter(), getYCenter());
-        parallelogram.lineTo(getXCenter() + getWidth(), getYCenter());
-        parallelogram.lineTo(getXCenter()+(getWidth()*1.5),getYCenter()+getHeight());
-        parallelogram.lineTo(getYCenter()+getWidth(),getYCenter()+getHeight());
+        parallelogram.moveTo(getLocation().x,getLocation().y);
+        parallelogram.lineTo(getLocation().x+width,getLocation().y);
+        parallelogram.lineTo(getLocation().x+(width*1.25),getLocation().y+height);
+        parallelogram.lineTo(getLocation().x+(width*.25),getLocation().y+height);
         parallelogram.closePath();
         Graphics2D g2d = (Graphics2D)g;
         g2d.setColor(super.getColor());
         g2d.fill(parallelogram);
+
+        g.setColor(Color.BLACK);
+        g.drawString(super.getLabel(),super.getLocation().x+30,super.getLocation().y+25);
+
 
     }
 }

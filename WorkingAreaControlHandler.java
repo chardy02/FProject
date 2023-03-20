@@ -25,15 +25,31 @@ public class WorkingAreaControlHandler implements MouseListener, MouseMotionList
                 previewShape = new Circle(Color.PINK,pLoc,false,"End");
                 Repository.getInstance().setPreviewShape(previewShape);
                 break;
-            case "Process":
-                previewShape = new Rectangle(Color.ORANGE,pLoc,Repository.getInstance().getProcess());
+            case "Print":
+                previewShape = new Parallelogram(Color.PINK,pLoc,"Print");
                 Repository.getInstance().setPreviewShape(previewShape);
                 break;
-            case "Decision":
-                previewShape = new Diamond(Color.BLUE,pLoc, "If");
+            case "Loop":
+                previewShape = new Diamond(Color.BLUE,pLoc, "Loop");
                 Repository.getInstance().setPreviewShape(previewShape);
                 break;
-            case "Line":
+            case "If":
+                previewShape = new Diamond(Color.BLACK,pLoc,"If");
+                Repository.getInstance().setPreviewShape(previewShape);
+                break;
+            case "Instruction":
+                previewShape = new Rectangle(Color.ORANGE,pLoc,"Instruction");
+                Repository.getInstance().setPreviewShape(previewShape);
+                break;
+            case "Function":
+                previewShape = new Rectangle(Color.ORANGE,pLoc,"Function");
+                Repository.getInstance().setPreviewShape(previewShape);
+                break;
+            case "Variable":
+                previewShape = new Rectangle(Color.ORANGE,pLoc,"Variable");
+                Repository.getInstance().setPreviewShape(previewShape);
+                break;
+            case "Connection":
                 //
             default:
                 System.out.println("Default on WorkingAreaControlHandler");
