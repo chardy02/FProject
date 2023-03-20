@@ -36,4 +36,9 @@ public abstract class DrawableDecorator implements Drawable {
     public Color getColor() {
         return innerDrawable.getColor();
     }
+
+    @Override
+    public boolean isInBounds(int x, int y) {
+        return innerDrawable.isInBounds(x, y);
+    }
 }
