@@ -1,13 +1,14 @@
 import java.awt.*;
+import java.io.Serializable;
 
-public abstract class Shape implements Drawable{
-    private int xPosCenter;
-    private int yPosCenter;
-    private int width;
-    private int height;
+public class Shape implements Serializable {
     private Color color;
+    private Point location;
+    private final int width;
+    private final int height;
+    private TextField textField;
 
-    public Shape(int xPosCenter, int yPosCenter, int width, int height, Color color){
+    public Shape(Color color, Point location, int width, int height, String text) {
         if(color == null){
             throw new NullPointerException();
         }
@@ -17,42 +18,34 @@ public abstract class Shape implements Drawable{
         if(height < 0){
             throw new IllegalArgumentException("Height must be greater than 0");
         }
-        this.xPosCenter = xPosCenter;
-        this.yPosCenter = yPosCenter;
+        this.color = color;
+        this.location = location;
         this.width = width;
         this.height = height;
-        this.color = color;
+        this.textField = new TextField(text);
     }
 
-    public boolean isInbounds(int x, int y){
-        return x <= xPosCenter + width/2 && x >= xPosCenter -width/2
-        && y < yPosCenter + height/2 && yPosCenter > yPosCenter - height/2;
+    public void draw(Graphics g) {
+        g.setColor(this.color);
+        Graphics2D g2 = (Graphics2D) g;
+        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+        g2.setStroke(new BasicStroke(4));
+        g.setFont(new Font("SansSerif", Font.BOLD, 15 ));
+
     }
 
-    public int getXCenter(){
-        return xPosCenter;
+    public Point getLocation() {
+        return location;
     }
-
-    public void setXCenter(int xPosCenter){
-        this.xPosCenter = xPosCenter;
+    public String getLabel() {
+        return textField.getText();
     }
-
-    public int getYCenter(){
-        return yPosCenter;
-    }
-    public void setYCenter(int yPosCenter){
-        this.yPosCenter = yPosCenter;
-    }
-
-    public int getHeight() {
-        return height;
-    }
-
+    public Color getColor() {return color;}
     public int getWidth() {
-        return width;
+        return this.width;
+    }
+    public int getHeight() {
+        return this.height;
     }
 
-    public Color getColor() {
-        return color;
-    }
 }

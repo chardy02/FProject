@@ -6,14 +6,17 @@ import java.awt.*;
  * @author Aaron Bettencourt
  */
 public class Diamond extends Shape {
+    private final int width = 100;
+    private final int height = 40;
 
     /**
      * Creates a Diamond object
      * @param color Color in which to draw the shape
+     * @param location point at which the shape is located
+     * @param label String of text to be drawn on the shape
      */
-
-    public Diamond(int xPosCenter, int yPosCenter, int width, int height, Color color) {
-        super(xPosCenter, yPosCenter,width,height, color);
+    public Diamond(Color color, Point location, String label) {
+        super(color, location,100,40, label);
     }
 
     /**
@@ -23,25 +26,30 @@ public class Diamond extends Shape {
      * @param g Graphics in which to draw the shape with
      */
     public void draw(Graphics g) {
+        super.draw(g);
         Point top = new Point();
         Point left = new Point();
         Point right = new Point();
         Point bottom = new Point();
 
         //calculate halfway points
-        top.x = getXCenter();
-        top.y = getYCenter() - getHeight() / 2;
-        left.x = getXCenter() - (getWidth() / 2);
-        left.y = getYCenter();
-        right.x = getXCenter() + getWidth() / 2;
-        right.y = getYCenter();
-        bottom.x = getXCenter();
-        bottom.y = getYCenter() + getHeight() / 2;
+        top.x = super.getLocation().x;
+        top.y = super.getLocation().y - height / 2;
+        left.x = super.getLocation().x - (width / 2);
+        left.y = super.getLocation().y;
+        right.x = super.getLocation().x + width / 2;
+        right.y = super.getLocation().y;
+        bottom.x = super.getLocation().x;
+        bottom.y = super.getLocation().y + height / 2;
 
         g.setColor(getColor());
         g.drawLine(left.x,left.y,top.x,top.y);
         g.drawLine(top.x,top.y,right.x,right.y);
         g.drawLine(right.x,right.y,bottom.x,bottom.y);
         g.drawLine(bottom.x,bottom.y,left.x,left.y);
+
+        int textWidth = g.getFontMetrics().stringWidth(super.getLabel());
+        g.setColor(Color.BLACK);
+        g.drawString(super.getLabel(),super.getLocation().x-5,super.getLocation().y+3);
     }
 }
