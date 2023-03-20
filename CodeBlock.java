@@ -1,7 +1,7 @@
 import java.awt.*;
 import java.util.ArrayList;
 
-public abstract class CodeBlock {
+public abstract class CodeBlock implements Drawable{
     private Drawable shape;
     private ArrayList<CodeBlock> inboundCodeBlocks;
     private ArrayList<CodeBlock> outboundCodeBlocks;
@@ -22,6 +22,16 @@ public abstract class CodeBlock {
 
     public void setYCenter(int y) {
         shape.setXCenter(y);
+    }
+
+    @Override
+    public int getXCenter() {
+        return shape.getXCenter();
+    }
+
+    @Override
+    public int getYCenter() {
+        return shape.getYCenter();
     }
 
     public boolean addToInbound(CodeBlock block) {
@@ -72,6 +82,9 @@ public abstract class CodeBlock {
         this.maxOutboundCount = maxOutboundCount;
     }
 
+    public Color getColor(){
+     return shape.getColor();
+    }
     public void draw(Graphics g){
         shape.draw(g);
     }

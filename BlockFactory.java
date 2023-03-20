@@ -13,20 +13,20 @@ public class BlockFactory {
         }  else if(type.equals("Instruction")){
             shape = new Rectangle(xPosCenter, yPosCenter, 100, 50, Color.BLUE);
             textDecorator = new TextDecorator(shape, "INSTRUCTION");
-            return new IfBlock(textDecorator);
+            return new InstructionBlock(textDecorator);
         } else if(type.equals("Loop")){
-            shape = new Diamond(xPosCenter, yPosCenter, 50, 60, Color.ORANGE);
+            shape = new Diamond(xPosCenter, yPosCenter, 50, 60, Color.PINK);
             textDecorator = new TextDecorator(shape, "LOOP");
             return new LoopBlock(textDecorator);
         } else if(type.equals("Print")){
-             shape = new Diamond(xPosCenter, yPosCenter, 50, 60, Color.ORANGE);
+             shape = new Parallelogram(xPosCenter, yPosCenter, 50, 60, Color.ORANGE);
              textDecorator = new TextDecorator(shape, "PRINT");
              return new LoopBlock(textDecorator);
         } else if(type.equals("Start")){
-             shape = new Circle(xPosCenter, yPosCenter, 50, Color.BLUE);
+             shape = new Circle(xPosCenter, yPosCenter, 50, Color.GREEN);
              return new StartBlock(shape);
-        } else if(type.equals("Stop")){
-            shape = new Circle(xPosCenter, yPosCenter, 50, Color.BLUE);
+        } else if(type.equals("End")){
+            shape = new Circle(xPosCenter, yPosCenter, 50, Color.RED);
             //DotDecorator dotDecorator = new DotDecorator(shape);
             return new StartBlock(shape);
         }
