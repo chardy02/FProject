@@ -17,8 +17,8 @@ public class MenuBarControlHandler implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        /*switch (e.getActionCommand()) {
-            case "New":
+        switch (e.getActionCommand()) {
+            /*case "New":
                 Repository.getInstance().selectMenuItem("  New File Created.");
                 System.out.println("New");
                 break;
@@ -53,7 +53,7 @@ public class MenuBarControlHandler implements ActionListener {
                 }
 
                 System.out.println("Load");
-                break;
+                break;*/
             case "About":
                 Repository.getInstance().selectMenuItem("About");
                 JOptionPane.showMessageDialog(JOptionPane.getRootFrame(),
@@ -77,7 +77,7 @@ public class MenuBarControlHandler implements ActionListener {
                 System.out.println("Return");
                 Repository.getInstance().setProcess("Return");
                 break;
-        }*/
+        }
 
         if(e.getActionCommand().equals("comboBoxChanged")){
             JComboBox tmp = (JComboBox) e.getSource();

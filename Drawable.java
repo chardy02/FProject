@@ -7,6 +7,6 @@ public interface Drawable {
 
     public void setXCenter(int xCenter);
     public void setYCenter(int yCenter);
-
     public Color getColor();
+    public boolean isInBounds(int x, int y);
 }

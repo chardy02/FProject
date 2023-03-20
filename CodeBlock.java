@@ -88,4 +88,9 @@ public abstract class CodeBlock implements Drawable{
     public void draw(Graphics g){
         shape.draw(g);
     }
+
+    @Override
+    public boolean isInBounds(int x, int y) {
+        return shape.isInBounds(x, y);
+    }
 }
