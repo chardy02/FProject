@@ -24,6 +24,7 @@ public class Circle extends Shape {
      */
     @Override
     public void draw(Graphics g) {
-        g.drawOval(getXCenter() - radius,getYCenter() - radius ,radius * 2, radius * 2);
+        g.setColor(getColor());
+        g.fillOval(getXCenter() - radius,getYCenter() - radius ,radius * 2, radius * 2);
     }
 }
