@@ -8,8 +8,6 @@ import java.awt.geom.Path2D;
  */
 public class Parallelogram extends Shape {
 
-    private final int width = 100;
-    private final int height = 40;
     private Path2D.Double parallelogram;
 
     /**
@@ -18,8 +16,8 @@ public class Parallelogram extends Shape {
      * @param location point at which the shape is located
      * @param text String of text to be drawn on the shape
      */
-    public Parallelogram(Color color, Point location, String text) {
-        super(color, location, 100, 40, text);
+    public Parallelogram(int xPosCenter, int yPosCenter, int width, int height, Color color) {
+        super(xPosCenter, yPosCenter,width,height, color);
     }
 
     /**
@@ -27,12 +25,11 @@ public class Parallelogram extends Shape {
      * @param g Graphics object to draw with
      */
     public void draw(Graphics g) {
-        super.draw(g);
         parallelogram = new Path2D.Double();
-        parallelogram.moveTo(getLocation().x,getLocation().y);
-        parallelogram.lineTo(getLocation().x+width,getLocation().y);
-        parallelogram.lineTo(getLocation().x+(width*1.5),getLocation().y+height);
-        parallelogram.lineTo(getLocation().y+width,getLocation().y+height);
+        parallelogram.moveTo(getXCenter(), getYCenter());
+        parallelogram.lineTo(getXCenter() + getWidth(), getYCenter());
+        parallelogram.lineTo(getXCenter()+(getWidth()*1.5),getYCenter()+getHeight());
+        parallelogram.lineTo(getYCenter()+getWidth(),getYCenter()+getHeight());
         parallelogram.closePath();
         Graphics2D g2d = (Graphics2D)g;
         g2d.setColor(super.getColor());

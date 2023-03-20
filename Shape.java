@@ -29,18 +29,30 @@ public abstract class Shape implements Drawable{
         && y < yPosCenter + height/2 && yPosCenter > yPosCenter - height/2;
     }
 
-    public int getCenterX(){
+    public int getXCenter(){
         return xPosCenter;
     }
 
-    public void setCenterX(int xPosCenter){
+    public void setXCenter(int xPosCenter){
         this.xPosCenter = xPosCenter;
     }
 
-    public int getCenterY(){
+    public int getYCenter(){
         return yPosCenter;
     }
-    public void setCenterY(int yPosCenter){
+    public void setYCenter(int yPosCenter){
         this.yPosCenter = yPosCenter;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public Color getColor() {
+        return color;
     }
 }
