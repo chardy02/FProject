@@ -12,7 +12,6 @@ public class Diamond extends Shape {
      * @param color Color in which to draw the shape
      */
 
-
     public Diamond(int xPosCenter, int yPosCenter, int width, int height, Color color) {
         super(xPosCenter, yPosCenter,width,height, color);
     }

@@ -21,4 +21,13 @@ public abstract class DrawableDecorator implements Drawable {
     public int getYCenter() {
         return innerDrawable.getYCenter();
     }
+
+    @Override
+    public void setXCenter(int xCenter) {
+        innerDrawable.setXCenter(xCenter);
+    }
+    @Override
+    public void setYCenter(int yCenter) {
+        innerDrawable.setXCenter(yCenter);
+    }
 }

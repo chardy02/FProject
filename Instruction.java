@@ -2,18 +2,17 @@ import java.awt.*;
 import java.util.ArrayList;
 
 public class Instruction extends CodeBlock {
-    private Drawable shape;
 
-    public Instruction(Drawable shape, int maxInboundCount, int maxOutboundCount) {
-        super(shape, new ArrayList<CodeBlock>(), new ArrayList<CodeBlock>(), maxInboundCount, maxOutboundCount);
-        this.shape = shape;
+    public Instruction(Drawable wrapper, int maxInboundCount, int maxOutboundCount) {
+        super(wrapper,1,1);
     }
 
-    public void setCenter(int x, int y) {
-        shape.setCenter(x, y);
+    public void setXCenter(int x) {
+        setXCenter(x);
     }
 
-    public Drawable getShape() {
-        return this.shape;
+    public void setYCenter(int y) {
+        setYCenter(y);
     }
+
 }
