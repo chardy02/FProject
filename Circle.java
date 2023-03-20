@@ -7,19 +7,15 @@ import java.awt.*;
  * @author Aaron Bettencourt
  */
 public class Circle extends Shape {
-    private final int radius = 50;
-    private boolean isFilled;
+    private int radius;
 
     /**
      * Creates a new Circle object
      * @param color Color in which to draw the shape
-     * @param location point at which the shape is located
-     * @param isFilled boolean of whether the circle is filled or just an outline
-     * @param label String of text to be drawn on the shape
      */
-    public Circle(Color color, Point location, boolean isFilled, String label) {
-        super(color, new Point(location.x, location.y),100,100, label);
-        this.isFilled = isFilled;
+    public Circle(int xPosCenter, int yPosCenter, int radius, Color color) {
+        super(xPosCenter, yPosCenter, radius * 2, radius * 2, color);
+        this.radius = radius;
     }
 
     /**
@@ -28,14 +24,7 @@ public class Circle extends Shape {
      */
     @Override
     public void draw(Graphics g) {
-        super.draw(g);
-        if(isFilled)
-            g.fillOval(super.getLocation().x - radius, super.getLocation().y - radius,radius *2, radius *2);
-        else g.drawOval(super.getLocation().x - radius,super.getLocation().y - radius ,radius * 2, radius * 2);
-
-        int textWidth = g.getFontMetrics().stringWidth(super.getLabel());
-        g.setColor(Color.BLACK);
-        g.drawString(super.getLabel(),super.getLocation().x-16,
-                super.getLocation().y+5);
+        g.setColor(getColor());
+        g.fillOval(getXCenter() - radius,getYCenter() - radius ,radius * 2, radius * 2);
     }
 }
