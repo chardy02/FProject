@@ -18,42 +18,15 @@ public class MenuBarControlHandler implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()) {
-            /*case "New":
+            case "New":
+                Repository.getInstance().clear();
                 Repository.getInstance().selectMenuItem("  New File Created.");
                 System.out.println("New");
                 break;
             case "Save":
-                Repository.getInstance().selectMenuItem("  File Saved.");
-
-                String saveFile = (String) JOptionPane.showInputDialog(,
-                        "Select a file name to save your diagram",
-                        "Save file",
-                        1);
-                if(saveFile != null && saveFile.length() > 0) {
-                    FileManager.writeFile(saveFile, Repository.getInstance().getCodeBlocks());
-                }
-                else {
-                    System.out.println("Please select a valid file name");
-                }
-
-                System.out.println("Save");
                 break;
             case "Load":
-                Repository.getInstance().selectMenuItem("  File Loaded.");
-                String loadFile = (String) JOptionPane.showInputDialog(
-                        Repository.getInstance().getDiagramFrame(),
-                        "Select a save file to load a diagram",
-                        "Load file",
-                        1);
-                if(loadFile != null && loadFile.length() > 0) {
-                    Repository.getInstance().setCodeBlocks(FileManager.readFile(loadFile));
-                }
-                else {
-                    System.out.println("Please select a valid save file");
-                }
-
-                System.out.println("Load");
-                break;*/
+                break;
             case "About":
                 Repository.getInstance().selectMenuItem("About");
                 JOptionPane.showMessageDialog(JOptionPane.getRootFrame(),
