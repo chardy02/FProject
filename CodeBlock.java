@@ -71,4 +71,8 @@ public abstract class CodeBlock {
     public void setMaxOutboundCount(int maxOutboundCount) {
         this.maxOutboundCount = maxOutboundCount;
     }
+
+    public void draw(Graphics g){
+        shape.draw(g);
+    }
 }
