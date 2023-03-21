@@ -5,6 +5,7 @@ public class BlockFactory {
         if(type == null)
             return null;
         TextDecorator textDecorator;
+        AlternateTextDecorator alternateTextDecorator;
         Shape shape;
         if(type.equals("If")){
             shape = new Diamond(xPosCenter, yPosCenter, 50, 60, Color.ORANGE);
@@ -31,8 +32,13 @@ public class BlockFactory {
             return new StartBlock(shape);
         } else if(type.equals("Variable")){
             shape = new VarShape(xPosCenter, yPosCenter, 100, 40, Color.decode("#f5f5dc"));
-            textDecorator = new TextDecorator(shape, "VARIABLE");
-            return new VariableBlock(textDecorator);
+            alternateTextDecorator = new AlternateTextDecorator(shape, "VARIABLE");
+            return new VariableBlock(alternateTextDecorator);
+        }
+        else if(type.equals("Function")){
+            shape = new FuncShape(xPosCenter, yPosCenter, 100, 40, Color.decode("#f5f5dc"));
+            alternateTextDecorator = new AlternateTextDecorator(shape, "FUNCTION");
+            return new VariableBlock(alternateTextDecorator);
         }
         return null;
     }
