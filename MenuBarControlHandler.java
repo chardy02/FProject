@@ -24,8 +24,34 @@ public class MenuBarControlHandler implements ActionListener {
                 System.out.println("New");
                 break;
             case "Save":
+                Repository.getInstance().selectMenuItem("  File Saved.");
+
+                String saveFile = (String) JOptionPane.showInputDialog(
+                        Repository.getInstance().getDiagramFrame(),
+                        "Select a file name to save your diagram",
+                        "Save file",
+                        1);
+                if(saveFile != null && saveFile.length() > 0) {
+                    FileManager.writeFile(saveFile);
+                }
+                else {
+                    System.out.println("Please select a valid file name");
+                }
                 break;
             case "Load":
+                Repository.getInstance().selectMenuItem("  File Loaded.");
+                String loadFile = (String) JOptionPane.showInputDialog(
+                        Repository.getInstance().getDiagramFrame(),
+                        "Select a save file to load a diagram",
+                        "Load file",
+                        1);
+                if(loadFile != null && loadFile.length() > 0) {
+                    FileManager.readFile(loadFile);
+                    Repository.getInstance().repaintWorkingArea();
+                }
+                else {
+                    System.out.println("Please select a valid save file");
+                }
                 break;
             case "About":
                 Repository.getInstance().selectMenuItem("About");

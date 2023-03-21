@@ -10,6 +10,8 @@ public class Repository extends Observable {
     private ArrayList<CodeBlock> codeBlocks;
     private ArrayList<Line> lines;
 
+    private DiagramApp diagramFrame;
+
     private Repository(){
         selectedCodeBlock = "Start";
         codeBlocks = new ArrayList<>();
@@ -54,6 +56,7 @@ public class Repository extends Observable {
         setChanged();
         notifyObservers();
     }
+    public void setLines(ArrayList<Line> lines) { this.lines = lines; }
     public ArrayList<Line> getLines() {
         if (lines == null) {
             return new ArrayList<>();
@@ -78,6 +81,9 @@ public class Repository extends Observable {
         return selectedCodeBlock;
     }
 
+    public DiagramApp getDiagramFrame() {
+        return diagramFrame;
+    }
 
     public void undo(){
         if(codeBlocks != null && codeBlocks.size() > 0) {

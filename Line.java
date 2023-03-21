@@ -1,5 +1,6 @@
 import java.awt.*;
 
+
 public class Line implements Drawable {
     private CodeBlock start;
     private CodeBlock end;
@@ -21,11 +22,20 @@ public class Line implements Drawable {
     public void draw(Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
 
-        Point startPos = new Point(start.getShape().getXCenter(), start.getShape().getYCenter());
-        Point endPos = new Point(end.getShape().getXCenter(), end.getShape().getYCenter());
+        Point startPos = new Point(start.getShape().getXCenter(), start.getShape().getYCenter() + (start.getShape().getHeight() / 2));
+        Point endPos = new Point(end.getShape().getXCenter(), end.getShape().getYCenter() - (end.getShape().getHeight() / 2));
+
+        if(startPos.x < endPos.x) {
+            if(startPos.y < endPos.y) {
+                //negative deg
+            }
+//        determine slope of line to calculate angle...
+        }
 
         g.setColor(Color.BLACK);
         g2d.drawLine(startPos.x, startPos.y, endPos.x, endPos.y);
+//        double theta = Math.atan((double) (endPos.y - startPos.y) / (double)(endPos.x - startPos.x));
+//        System.out.println(theta * 360 / (2 * Math.PI));
     }
 
 //    public void update(Point newS, Point newE) {
@@ -40,6 +50,13 @@ public class Line implements Drawable {
     public int getXCenter() { return 0; }
     @Override
     public int getYCenter() { return 0; }
+
+    @Override
+    public int getWidth() { return 0; }
+
+    @Override
+    public int getHeight() { return 0;}
+
     @Override
     public void setXCenter(int xCenter) {}
     @Override

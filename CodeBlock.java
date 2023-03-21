@@ -1,7 +1,8 @@
 import java.awt.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public abstract class CodeBlock implements Drawable{
+public abstract class CodeBlock implements Drawable {
     private Drawable shape;
     private ArrayList<CodeBlock> inboundCodeBlocks;
     private ArrayList<CodeBlock> outboundCodeBlocks;
@@ -37,9 +38,14 @@ public abstract class CodeBlock implements Drawable{
         return shape.getYCenter();
     }
 
+    public boolean canAddIn() {
+        return inboundCodeBlocks.size() < maxInboundCount;
+    }
+    public boolean canAddOut() {
+        return outboundCodeBlocks.size() < maxOutboundCount;
+    }
+
     public boolean addToInbound(CodeBlock block) {
-        System.out.println(maxInboundCount);
-        System.out.println(inboundCodeBlocks.size());
         if (inboundCodeBlocks.size() < maxInboundCount) {
             return inboundCodeBlocks.add(block);
         } else {
