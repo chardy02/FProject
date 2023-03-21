@@ -60,6 +60,7 @@ public class Repository extends Observable {
         notifyObservers();
     }
     public void setLines(ArrayList<Line> lines) { this.lines = lines; }
+
     public ArrayList<Line> getLines() {
         if (lines == null) {
             return new ArrayList<>();
