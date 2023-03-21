@@ -16,6 +16,6 @@ public class TextDecorator extends ShapeDecorator {
         int textWidth = g.getFontMetrics().stringWidth(text);
         super.draw(g);
         g.setColor(Color.BLACK);
-        g.drawString(text,  (getXCenter() - textWidth / 2), getYCenter());
+        g.drawString(text,  (getXCenter() - textWidth / 2), getYCenter() + 5);
     }
 }
