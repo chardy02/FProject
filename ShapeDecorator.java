@@ -1,8 +1,8 @@
 import java.awt.*;
 
-public abstract class DrawableDecorator extends Shape {
+public abstract class ShapeDecorator extends Shape {
     Shape innerShape;
-    public DrawableDecorator(Shape innerShape){
+    public ShapeDecorator(Shape innerShape){
         super(innerShape.getXCenter(), innerShape.getYCenter(),
                 innerShape.getWidth(), innerShape.getHeight(),
                 innerShape.getColor());

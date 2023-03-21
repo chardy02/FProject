@@ -1,6 +1,6 @@
 import java.awt.*;
 
-public class ParallelLineDecorator extends DrawableDecorator {
+public class ParallelLineDecorator extends ShapeDecorator {
     public ParallelLineDecorator(Shape innerShape) {
         super(innerShape);
     }

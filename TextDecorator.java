@@ -1,6 +1,6 @@
 import java.awt.*;
 
-public class TextDecorator extends DrawableDecorator {
+public class TextDecorator extends ShapeDecorator {
 
     private String text;
     public TextDecorator(Shape innerShape, String text) {

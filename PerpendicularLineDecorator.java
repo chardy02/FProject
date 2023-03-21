@@ -1,6 +1,6 @@
 import java.awt.*;
 
-public class PerpendicularLineDecorator extends DrawableDecorator{
+public class PerpendicularLineDecorator extends ShapeDecorator {
     public PerpendicularLineDecorator(Shape innerShape) {
         super(innerShape);
     }

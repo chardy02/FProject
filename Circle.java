@@ -28,7 +28,8 @@ public class Circle extends Shape {
         Stroke defaultStroke = graphics2D.getStroke();
         graphics2D.setStroke(new BasicStroke(5));
         graphics2D.setColor(getColor());
-        graphics2D.drawOval(getXCenter() - radius,getYCenter() - radius ,radius * 2, radius * 2);
+        graphics2D.drawOval(getXCenter() - radius,getYCenter() -
+                radius ,radius * 2, radius * 2);
         graphics2D.setStroke(defaultStroke);
     }
 }
