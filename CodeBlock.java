@@ -38,6 +38,8 @@ public abstract class CodeBlock implements Drawable{
     }
 
     public boolean addToInbound(CodeBlock block) {
+        System.out.println(maxInboundCount);
+        System.out.println(inboundCodeBlocks.size());
         if (inboundCodeBlocks.size() < maxInboundCount) {
             return inboundCodeBlocks.add(block);
         } else {

@@ -26,9 +26,14 @@ public class WorkingAreaControlHandler implements MouseListener, MouseMotionList
                 Drawable s = block.getShape();
                 if (s.isInBounds(e.getX(), e.getY())) {
                     if (drawingLine) {
+                        System.out.println("Trying to draw line");
+//                        System.out.println(block.addToInbound(firstClicked) + " " + firstClicked.addToOutbound(block));
                         if(block.addToInbound(firstClicked) && firstClicked.addToOutbound(block)) {
+                            System.out.println("Got inside drawing");
                             Repository.getInstance().addLine(new Line(block, firstClicked));
                             firstClicked = null;
+                            drawingLine = false;
+                            Repository.getInstance().repaintWorkingArea();
                             break;
                         }
                     }

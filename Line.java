@@ -24,6 +24,7 @@ public class Line implements Drawable {
         Point startPos = new Point(start.getShape().getXCenter(), start.getShape().getYCenter());
         Point endPos = new Point(end.getShape().getXCenter(), end.getShape().getYCenter());
 
+        g.setColor(Color.BLACK);
         g2d.drawLine(startPos.x, startPos.y, endPos.x, endPos.y);
     }
 
