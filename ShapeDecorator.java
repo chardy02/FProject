@@ -13,4 +13,16 @@ public abstract class ShapeDecorator extends Shape {
     public void draw(Graphics g) {
         innerShape.draw(g);
     }
+
+    @Override
+    public void setXCenter(int xPosCenter) {
+        super.setXCenter(xPosCenter);
+        innerShape.setXCenter(xPosCenter);
+    }
+
+    @Override
+    public void setYCenter(int yPosCenter) {
+        super.setYCenter(yPosCenter);
+        innerShape.setYCenter(yPosCenter);
+    }
 }

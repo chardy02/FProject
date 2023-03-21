@@ -29,13 +29,12 @@ public class BlockFactory {
             }
             case "Start" -> {
                 shape = new Circle(xPosCenter, yPosCenter, 50, Color.GREEN);
-                PerpendicularLineDecorator pld = new PerpendicularLineDecorator(shape);
-                return new StartBlock(pld);
+                return new StartBlock(shape);
             }
             case "End" -> {
                 shape = new Circle(xPosCenter, yPosCenter, 50, Color.RED);
-                //DotDecorator dotDecorator = new DotDecorator(shape);
-                return new StopBlock(shape);
+                DotDecorator dotDecorator = new DotDecorator(shape);
+                return new StopBlock(dotDecorator);
             }
             case "Variable" -> {
                 shape = new Rectangle(xPosCenter, yPosCenter, 100, 40, Color.decode("#f5f5dc"));

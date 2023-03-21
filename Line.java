@@ -22,8 +22,8 @@ public class Line implements Drawable {
     public void draw(Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
 
-        Point startPos = new Point(start.getShape().getXCenter(), start.getShape().getYCenter() + (start.getShape().getHeight() / 2));
-        Point endPos = new Point(end.getShape().getXCenter(), end.getShape().getYCenter() - (end.getShape().getHeight() / 2));
+        Point startPos = new Point(start.getXCenter(), start.getYCenter() + (start.getHeight() / 2));
+        Point endPos = new Point(end.getXCenter(), end.getYCenter() - (end.getHeight() / 2));
 
         if(startPos.x < endPos.x) {
             if(startPos.y < endPos.y) {
@@ -46,29 +46,4 @@ public class Line implements Drawable {
 //        end = endPt;
 //    }
 
-    @Override
-    public int getXCenter() { return 0; }
-    @Override
-    public int getYCenter() { return 0; }
-
-    @Override
-    public int getWidth() { return 0; }
-
-    @Override
-    public int getHeight() { return 0;}
-
-    @Override
-    public void setXCenter(int xCenter) {}
-    @Override
-    public void setYCenter(int yCenter) {}
-
-    @Override
-    public Color getColor() {
-        return null;
-    }
-
-    @Override
-    public boolean isInBounds(int x, int y) {
-        return false;
-    }
 }

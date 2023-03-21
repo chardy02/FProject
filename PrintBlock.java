@@ -5,7 +5,6 @@ import java.awt.*;
  * @author Patrick Whitlock
  */
 public class PrintBlock extends CodeBlock {
-    Drawable drawable;
     /**
      * Creates a PrintBlock object
      * @param xPosCenter x location
@@ -13,16 +12,5 @@ public class PrintBlock extends CodeBlock {
      */
     public PrintBlock(Shape wrapper) {
         super(wrapper, 1, 1);
-        drawable = wrapper;
-    }
-
-    @Override
-    public int getWidth() {
-        return drawable.getWidth();
-    }
-
-    @Override
-    public int getHeight() {
-        return drawable.getHeight();
     }
 }

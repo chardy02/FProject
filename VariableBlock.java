@@ -9,13 +9,4 @@ public class VariableBlock extends CodeBlock{
         super(wrapper,1,1);
         drawable = wrapper;
     }
-    @Override
-    public int getWidth() {
-        return drawable.getWidth();
-    }
-
-    @Override
-    public int getHeight() {
-        return drawable.getHeight();
-    }
 }

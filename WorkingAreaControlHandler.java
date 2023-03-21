@@ -23,8 +23,7 @@ public class WorkingAreaControlHandler implements MouseListener, MouseMotionList
         String blockType = Repository.getInstance().getSelectedCodeBlock();
         if (blockType.equals("Connection")) {
             for(CodeBlock block : Repository.getInstance().getCodeBlocks()) {
-                Drawable s = block.getShape();
-                if (s.isInBounds(e.getX(), e.getY())) {
+                if (block.isInBounds(e.getX(), e.getY())) {
                     if (drawingLine) {
                         if(block.canAddIn() && firstClicked.canAddOut() && !block.equals(firstClicked)) {
                             Repository.getInstance().addLine(new Line(firstClicked, block));
@@ -42,8 +41,7 @@ public class WorkingAreaControlHandler implements MouseListener, MouseMotionList
         }
         else {
             for(CodeBlock block : Repository.getInstance().getCodeBlocks()) {
-                Drawable s = block.getShape();
-                if(s.isInBounds(e.getX(), e.getY())) {
+                if(block.isInBounds(e.getX(), e.getY())) {
                     dragging = block;
 //                    dragOffset = new Point(e.getX() - s.getXCenter(), e.getY() - s.getYCenter());
                 }

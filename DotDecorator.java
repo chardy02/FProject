@@ -1,25 +1,15 @@
 import java.awt.*;
 
-public class DotDecorator extends DrawableDecorator {
-    Drawable drawable;
+public class DotDecorator extends ShapeDecorator {
 
-    public DotDecorator(Drawable innerDrawable) {
+    public DotDecorator(Shape innerDrawable) {
         super(innerDrawable);
-        drawable = innerDrawable;
     }
     @Override
     public void draw(Graphics g) {
-        Shape s = (Shape) super.getInnerDrawable();
-        g.fillOval(s.getXCenter(), s.getYCenter(), 4, 4);
-    }
-
-    @Override
-    public int getWidth() {
-        return drawable.getWidth();
-    }
-
-    @Override
-    public int getHeight() {
-        return drawable.getHeight();
+        super.draw(g);
+        int radius = getWidth() / 2 - 10;
+        g.fillOval(getXCenter() - radius, getYCenter() - radius,
+                radius * 2, radius * 2);
     }
 }
