@@ -28,8 +28,8 @@ public class Parallelogram extends Shape {
         parallelogram = new Path2D.Double();
         parallelogram.moveTo(getXCenter(), getYCenter());
         parallelogram.lineTo(getXCenter() + getWidth(), getYCenter());
-        parallelogram.lineTo(getXCenter()+(getWidth()*1.5),getYCenter()+getHeight());
-        parallelogram.lineTo(getYCenter()+getWidth(),getYCenter()+getHeight());
+        parallelogram.lineTo(getXCenter()+(getWidth()*1.25),getYCenter()+getHeight());
+        parallelogram.lineTo(getXCenter()+(getWidth()*.25),getYCenter()+getHeight());
         parallelogram.closePath();
         Graphics2D g2d = (Graphics2D)g;
         g2d.setColor(super.getColor());
