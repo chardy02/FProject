@@ -5,7 +5,7 @@ public class FunctionBlock extends CodeBlock{
      * Creates a FunctionBlock object
      * @param wrapper the drawable component
      */
-    public FunctionBlock(Drawable wrapper) {
+    public FunctionBlock(Shape wrapper) {
         super(wrapper,1,1);
     }
 

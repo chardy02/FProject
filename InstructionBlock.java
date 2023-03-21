@@ -1,6 +1,6 @@
 public class InstructionBlock extends CodeBlock {
 
-    public InstructionBlock(Drawable wrapper) {
+    public InstructionBlock(Shape wrapper) {
         super(wrapper,1,1);
     }
 
