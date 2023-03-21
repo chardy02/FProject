@@ -5,7 +5,7 @@ import java.util.Observer;
 
 public class WorkingArea extends JPanel implements Observer {
 
-    public WorkingArea(){
+    public WorkingArea() {
 
     }
 
@@ -14,10 +14,14 @@ public class WorkingArea extends JPanel implements Observer {
         for(CodeBlock codeBlock: Repository.getInstance().getCodeBlocks()) {
             codeBlock.draw(g);
         }
+        for(Line l : Repository.getInstance().getLines()) {
+            l.draw(g);
+        }
     }
 
     @Override
     public void update(Observable o, Object arg) {
+        System.out.println("Updated");
         repaint();
     }
 }

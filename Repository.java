@@ -8,6 +8,7 @@ public class Repository extends Observable {
     private String selectedCodeBlock;
     private String selectedMenuItem, process;
     private ArrayList<CodeBlock> codeBlocks;
+    private ArrayList<Line> lines;
 
     private Repository(){
         selectedCodeBlock = "Start";
@@ -53,7 +54,18 @@ public class Repository extends Observable {
         setChanged();
         notifyObservers();
     }
-
+    public ArrayList<Line> getLines() {
+        if (lines == null) {
+            return new ArrayList<>();
+        }
+        return lines;
+    }
+    public void addLine(Line l) {
+        if(lines == null) {
+            lines = new ArrayList<>();
+        }
+        lines.add(l);
+    }
     public void setProcess(String process){
         this.process = process;
     }
@@ -79,5 +91,9 @@ public class Repository extends Observable {
         codeBlocks.clear();
         setChanged();
         notifyObservers("Board Cleared.");
+    }
+    public void repaintWorkingArea() {
+        setChanged();
+        notifyObservers();
     }
 }

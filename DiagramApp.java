@@ -14,6 +14,7 @@ public class DiagramApp extends JFrame {
         Repository.getInstance().addObserver(drawPanel);
         Repository.getInstance().addObserver(statusBar);
 
+
         statusBar.setEnabled(false);
         statusBar.setFont(new Font(Font.DIALOG,Font.PLAIN,17));
         statusBar.setDisabledTextColor(Color.BLACK);

@@ -16,12 +16,15 @@ public abstract class CodeBlock implements Drawable{
         this.maxOutboundCount = maxOutboundCount;
     }
 
+    public Drawable getShape() {
+        return shape;
+    }
     public void setXCenter(int x) {
         shape.setXCenter(x);
     }
 
     public void setYCenter(int y) {
-        shape.setXCenter(y);
+        shape.setYCenter(y);
     }
 
     @Override
