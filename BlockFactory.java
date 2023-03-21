@@ -9,7 +9,7 @@ public class BlockFactory {
         AlternateTextDecorator alternateTextDecorator;
         Shape shape;
         switch (type) {
-            case "if":
+            case "If":
                 shape = new Diamond(xPosCenter, yPosCenter, 50, 60, Color.ORANGE);
                 textDecorator = new TextDecorator(shape, "IF");
                 return new IfBlock(textDecorator);
