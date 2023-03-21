@@ -9,12 +9,12 @@ public class BlockFactory {
         AlternateTextDecorator alternateTextDecorator;
         Shape shape;
         switch (type) {
-            case "if":
+            case "If":
                 shape = new Diamond(xPosCenter, yPosCenter, 50, 60, Color.ORANGE);
                 textDecorator = new TextDecorator(shape, "IF");
                 return new IfBlock(textDecorator);
             case "Instruction":
-                shape = new Rectangle(xPosCenter, yPosCenter, 100, 50, Color.BLUE);
+                shape = new Rectangle(xPosCenter, yPosCenter, 100, 50, Color.CYAN);
                 textDecorator = new TextDecorator(shape, "INSTRUCTION");
                 return new InstructionBlock(textDecorator);
             case "Loop":

@@ -7,7 +7,7 @@ import java.awt.geom.Path2D;
  * @author Ashton Alonge
  */
 public class Parallelogram extends Shape {
-    public static final int offset = 15;
+    public static final int offset = 30;
 
     /**
      * Creates a parallelogram object

@@ -2,17 +2,15 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * @author Ashton Alonge
+ */
 public class MenuBarControlHandler implements ActionListener {
 
-    private JPopupMenu popupMenu;
     private JMenuBar menuBar;
 
     public MenuBarControlHandler(JMenuBar menuBar){
         this.menuBar = menuBar;
-    }
-
-    public void addPopUpMenu(JPopupMenu popupMenu){
-        this.popupMenu = popupMenu;
     }
 
     @Override
@@ -20,18 +18,27 @@ public class MenuBarControlHandler implements ActionListener {
         switch (e.getActionCommand()) {
             case "New":
                 Repository.getInstance().clear();
-                Repository.getInstance().selectMenuItem("  New File Created.");
+                Repository.getInstance().selectMenuItem("New File Created.");
                 System.out.println("New");
                 break;
             case "Save":
+                Repository.getInstance().selectMenuItem("File Saved.");
                 break;
             case "Load":
+                Repository.getInstance().selectMenuItem("File Loaded.");
                 break;
             case "About":
                 Repository.getInstance().selectMenuItem("About");
                 JOptionPane.showMessageDialog(JOptionPane.getRootFrame(),
-                        "Welcome to version 1.0 of the Diagram App.\nThis is an overview of the features and how to use them.\nBy clicking on \"File\", you have the options to make a new diagram,\nsave your diagram, or load an existing diagram.\nBy clicking on help, you managed to open this dialog.\nClicking on Actions gives the options to clear the diagram or undo the last action.\nIf you click on Start, you can select which component you would like to draw.\nClicking anywhere in the area will draw the selected shape at that location.\nIf the line component is selected, clicking on two shapes will draw a line between\ntheir two closest edges.\nAuthors:\nAshton Alonge\nAaron Bettencourt\nAlex Banham\nConnor Hickey" +
-                                "\nPatrick Whitlock\nCameron Hardy");
+                        "Welcome to version 1.0 of the Diagram App.\nThis is an overview of the features and " +
+                                "how to use them.\nBy clicking on \"File\", you have the options to make a new diagram," +
+                                "\nsave your diagram, or load an existing diagram.\nBy clicking on help, you managed to" +
+                                " open this dialog.\nClicking on Actions gives the options to clear the diagram or undo " +
+                                "the last action.\nIf you click on Start, you can select which component you would like" +
+                                " to draw.\nClicking anywhere in the area will draw the selected shape at that location." +
+                                "\nIf the line component is selected, clicking on two shapes will draw a line between\n" +
+                                "their two closest edges.\nAuthors:\nAshton Alonge\nAaron Bettencourt" +
+                                "\nAlex Banham\nConnor Hickey\nPatrick Whitlock\nCameron Hardy");
                 break;
             case "Undo":
                 Repository.getInstance().undo();
