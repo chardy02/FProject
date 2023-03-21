@@ -1,5 +1,5 @@
 public class VariableBlock extends CodeBlock{
-
+    Drawable drawable;
     /**
      * @author alexbanham
      * Creates a VariableBlock object
@@ -7,13 +7,15 @@ public class VariableBlock extends CodeBlock{
      */
     public VariableBlock(Shape wrapper) {
         super(wrapper,1,1);
+        drawable = wrapper;
+    }
+    @Override
+    public int getWidth() {
+        return drawable.getWidth();
     }
 
-    public void setXCenter(int x) {
-        setXCenter(x);
-    }
-
-    public void setYCenter(int y) {
-        setYCenter(y);
+    @Override
+    public int getHeight() {
+        return drawable.getHeight();
     }
 }

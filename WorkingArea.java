@@ -8,7 +8,7 @@ import java.util.Observer;
  */
 public class WorkingArea extends JPanel implements Observer {
 
-    public WorkingArea(){
+    public WorkingArea() {
 
     }
 
@@ -16,6 +16,9 @@ public class WorkingArea extends JPanel implements Observer {
         super.paintComponent(g);
         for(CodeBlock codeBlock: Repository.getInstance().getCodeBlocks()) {
             codeBlock.draw(g);
+        }
+        for(Line l : Repository.getInstance().getLines()) {
+            l.draw(g);
         }
     }
 

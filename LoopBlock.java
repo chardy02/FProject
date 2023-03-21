@@ -1,7 +1,19 @@
 public class LoopBlock extends CodeBlock {
 
-    public LoopBlock(Shape wrapper) {
-        super(wrapper, 2, 2);
+    private Drawable wrapper;
+
+    public LoopBlock(Drawable drawable) {
+        super(drawable, 2, 2);
+        wrapper = drawable;
     }
 
+    @Override
+    public int getWidth() {
+        return wrapper.getWidth();
+    }
+
+    @Override
+    public int getHeight() {
+        return wrapper.getHeight();
+    }
 }

@@ -1,14 +1,15 @@
 import java.awt.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public abstract class CodeBlock {
-    private Shape shape;
+public abstract class CodeBlock implements Drawable {
+    private Drawable shape;
     private ArrayList<CodeBlock> inboundCodeBlocks;
     private ArrayList<CodeBlock> outboundCodeBlocks;
     private int maxInboundCount;
     private int maxOutboundCount;
 
-    public CodeBlock(Shape shape, int maxInboundCount, int maxOutboundCount) {
+    public CodeBlock(Drawable shape, int maxInboundCount, int maxOutboundCount) {
         this.shape = shape;
         this.inboundCodeBlocks = new ArrayList<>();
         this.outboundCodeBlocks = new ArrayList<>();
@@ -16,6 +17,9 @@ public abstract class CodeBlock {
         this.maxOutboundCount = maxOutboundCount;
     }
 
+    public Drawable getShape() {
+        return shape;
+    }
     public void setXCenter(int x) {
         shape.setXCenter(x);
     }
@@ -24,12 +28,21 @@ public abstract class CodeBlock {
         shape.setYCenter(y);
     }
 
+    @Override
     public int getXCenter() {
         return shape.getXCenter();
     }
 
+    @Override
     public int getYCenter() {
         return shape.getYCenter();
+    }
+
+    public boolean canAddIn() {
+        return inboundCodeBlocks.size() < maxInboundCount;
+    }
+    public boolean canAddOut() {
+        return outboundCodeBlocks.size() < maxOutboundCount;
     }
 
     public boolean addToInbound(CodeBlock block) {
@@ -87,15 +100,7 @@ public abstract class CodeBlock {
         shape.draw(g);
     }
 
-
-    public int getWidth() {
-        return shape.getWidth();
-    }
-
-    public int getHeight() {
-        return shape.getHeight();
-    }
-
+    @Override
     public boolean isInBounds(int x, int y) {
         return shape.isInBounds(x, y);
     }
