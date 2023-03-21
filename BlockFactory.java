@@ -34,8 +34,7 @@ public class BlockFactory {
             PerpendicularLineDecorator pld = new PerpendicularLineDecorator(shape);
             textDecorator = new TextDecorator(pld, "VARIABLE");
             return new VariableBlock(textDecorator);
-        }
-        else if(type.equals("Function")){
+        } else if(type.equals("Function")){
             shape = new Rectangle(xPosCenter, yPosCenter, 100, 40, Color.decode("#f5f5dc"));
             ParallelLineDecorator pld = new ParallelLineDecorator(shape);
             textDecorator = new TextDecorator(pld, "FUNCTION");
