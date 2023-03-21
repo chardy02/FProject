@@ -1,6 +1,6 @@
 public class LoopBlock extends CodeBlock {
 
-    public LoopBlock(Drawable wrapper) {
+    public LoopBlock(Shape wrapper) {
         super(wrapper, 2, 2);
     }
 

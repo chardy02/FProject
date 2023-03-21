@@ -1,20 +1,21 @@
 import java.awt.*;
 import java.awt.geom.Path2D;
 /**
- * Parallelogram that is 100px wide, 40px high
+ * Parallelogram
  * @author Patrick Whitlock
  * @author Aaron Bettencourt
  * @author Ashton Alonge
  */
 public class Parallelogram extends Shape {
-
-    private Path2D.Double parallelogram;
+    public static final int offset = 30;
 
     /**
      * Creates a parallelogram object
      * @param color Color in which to draw the shape
-     * @param location point at which the shape is located
-     * @param text String of text to be drawn on the shape
+     * @param xPosCenter X location at which the shape is located
+     * @param yPosCenter Y location at which the shape is located
+     * @param height how many px high the shape is
+     * @param width how many px wide the shape is
      */
     public Parallelogram(int xPosCenter, int yPosCenter, int width, int height, Color color) {
         super(xPosCenter, yPosCenter,width,height, color);
@@ -25,14 +26,24 @@ public class Parallelogram extends Shape {
      * @param g Graphics object to draw with
      */
     public void draw(Graphics g) {
-        parallelogram = new Path2D.Double();
-        parallelogram.moveTo(getXCenter(), getYCenter());
-        parallelogram.lineTo(getXCenter() + getWidth(), getYCenter());
-        parallelogram.lineTo(getXCenter()+(getWidth()*1.25),getYCenter()+getHeight());
-        parallelogram.lineTo(getXCenter()+(getWidth()*.25),getYCenter()+getHeight());
-        parallelogram.closePath();
-        Graphics2D g2d = (Graphics2D)g;
-        g2d.setColor(super.getColor());
-        g2d.fill(parallelogram);
+        int xPoly[] = {0,0,0,0}; //Top, right, bottom, left
+        int yPoly[] = {0,0,0,0};
+
+        //calculate corner points
+        xPoly[0] = getXCenter() - getWidth()/2 - offset;
+        yPoly[0] = getYCenter() + getHeight() / 2;
+
+        xPoly[1] = getXCenter() + getWidth() / 2;
+        yPoly[1] = getYCenter() + getHeight() / 2;
+
+        xPoly[2] = getXCenter() + (getWidth()/2) + offset;
+        yPoly[2] = getYCenter() - getHeight() / 2;
+
+        xPoly[3] = getXCenter() - getWidth() / 2;
+        yPoly[3] = getYCenter() - getHeight() / 2;
+
+        g.setColor(getColor());
+        Polygon polygon = new Polygon(xPoly,yPoly,xPoly.length);
+        g.fillPolygon(polygon);
     }
 }

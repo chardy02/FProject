@@ -24,7 +24,12 @@ public class Circle extends Shape {
      */
     @Override
     public void draw(Graphics g) {
-        g.setColor(getColor());
-        g.fillOval(getXCenter() - radius,getYCenter() - radius ,radius * 2, radius * 2);
+        Graphics2D graphics2D = (Graphics2D) g;
+        Stroke defaultStroke = graphics2D.getStroke();
+        graphics2D.setStroke(new BasicStroke(5));
+        graphics2D.setColor(getColor());
+        graphics2D.drawOval(getXCenter() - radius,getYCenter() -
+                radius ,radius * 2, radius * 2);
+        graphics2D.setStroke(defaultStroke);
     }
 }

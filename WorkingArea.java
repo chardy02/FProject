@@ -3,6 +3,9 @@ import java.awt.*;
 import java.util.Observable;
 import java.util.Observer;
 
+/**
+ * @author Ashton Alonge
+ */
 public class WorkingArea extends JPanel implements Observer {
 
     public WorkingArea() {

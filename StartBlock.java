@@ -1,8 +1,7 @@
 import java.awt.*;
 
 public class StartBlock extends CodeBlock{
-    final int radius = 50;
-    public StartBlock(Drawable drawable){
-        super(drawable, 0, 1);
+    public StartBlock(Shape wrapper){
+        super(wrapper, 0, 1);
     }
 }

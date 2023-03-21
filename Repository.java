@@ -3,6 +3,9 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.Observable;
 
+/**
+ * @author Ashton Alonge
+ */
 public class Repository extends Observable {
     private static Repository repository;
     private String selectedCodeBlock;

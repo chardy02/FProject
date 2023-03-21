@@ -11,7 +11,7 @@ public class PrintBlock extends CodeBlock {
      * @param xPosCenter x location
      * @param yPosCenter y location
      */
-    public PrintBlock(Drawable wrapper) {
+    public PrintBlock(Shape wrapper) {
         super(wrapper, 1, 1);
     }
 }
