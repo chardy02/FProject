@@ -2,8 +2,12 @@ import java.awt.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public abstract class CodeBlock {
+public abstract class CodeBlock implements Serializable {
     private Shape shape;
+
+//    private ArrayList<Line> inboundLines;
+//    private ArrayList<Line> outboundLines;
+
     private ArrayList<CodeBlock> inboundCodeBlocks;
     private ArrayList<CodeBlock> outboundCodeBlocks;
     private int maxInboundCount;
@@ -48,7 +52,6 @@ public abstract class CodeBlock {
             return false;
         }
     }
-
     public boolean addToOutbound(CodeBlock block) {
         if (outboundCodeBlocks.size() < maxOutboundCount) {
             return outboundCodeBlocks.add(block);

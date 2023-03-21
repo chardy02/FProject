@@ -1,6 +1,7 @@
 import java.awt.*;
+import java.io.Serializable;
 
-public abstract class Shape implements Drawable{
+public abstract class Shape implements Drawable, Serializable {
     private int xPosCenter;
     private int yPosCenter;
     private int width;
@@ -26,8 +27,8 @@ public abstract class Shape implements Drawable{
 
 
     public boolean isInBounds(int x, int y) {
-        return x <= xPosCenter + width/2 && x >= xPosCenter -width/2
-                && y < yPosCenter + height/2 && yPosCenter > yPosCenter - height/2;
+        return x <= xPosCenter + width/2 && x >= xPosCenter - width/2
+                && y < yPosCenter + height/2 && y > yPosCenter - height/2;
     }
 
     public int getXCenter(){
