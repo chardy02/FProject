@@ -59,7 +59,7 @@ public class DiagramApp extends JFrame {
         actions.add(undo);
         actions.add(clear);
 
-        MenuBarControlHandler menuController = new MenuBarControlHandler(menuBar);
+        MenuBarControlHandler menuController = new MenuBarControlHandler();
 
         newFile.addActionListener(menuController);
         save.addActionListener(menuController);

@@ -8,15 +8,10 @@ import java.awt.event.ActionListener;
  */
 public class MenuBarControlHandler implements ActionListener {
 
-    private JPopupMenu popupMenu;
-    private JMenuBar menuBar;
-
     /**
      * Constructor
-     * @param menuBar menu bar
      */
-    public MenuBarControlHandler(JMenuBar menuBar){
-        this.menuBar = menuBar;
+    public MenuBarControlHandler(){
     }
 
     /**
