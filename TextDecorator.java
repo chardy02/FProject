@@ -3,11 +3,9 @@ import java.awt.*;
 public class TextDecorator extends ShapeDecorator {
 
     private String text;
-    Drawable wrapper;
 
-    public TextDecorator(Shape drawable, String text) {
-        super(drawable);
-        wrapper = drawable;
+    public TextDecorator(Shape innerShape, String text) {
+        super(innerShape);
         if(text == null){
             throw new NullPointerException("TextDecorator: text can't be null");
         }

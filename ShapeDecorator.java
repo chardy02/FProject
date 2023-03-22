@@ -1,7 +1,7 @@
 import java.awt.*;
 
 public abstract class ShapeDecorator extends Shape {
-    Shape innerShape;
+    private Shape innerShape;
     public ShapeDecorator(Shape innerShape){
         super(innerShape.getXCenter(), innerShape.getYCenter(),
                 innerShape.getWidth(), innerShape.getHeight(),

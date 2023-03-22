@@ -2,8 +2,8 @@ import java.awt.*;
 
 public class DotDecorator extends ShapeDecorator {
 
-    public DotDecorator(Shape innerDrawable) {
-        super(innerDrawable);
+    public DotDecorator(Shape innerShape) {
+        super(innerShape);
     }
     @Override
     public void draw(Graphics g) {

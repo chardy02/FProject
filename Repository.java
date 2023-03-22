@@ -10,12 +10,11 @@ import java.util.Observable;
 public class Repository extends Observable {
     private static Repository repository;
     private String selectedCodeBlock;
-    private String selectedMenuItem, process;
+    private String selectedMenuItem;
     private ArrayList<CodeBlock> codeBlocks;
     private ArrayList<Line> lines;
     private ArrayList<Object> drawables;
 
-    private DiagramApp diagramFrame;
 
     /**
      * Constructor to initialize data
@@ -130,13 +129,6 @@ public class Repository extends Observable {
         return selectedCodeBlock;
     }
 
-    /**
-     * getter for diagram frame
-     * @return diagram frame
-     */
-    public DiagramApp getDiagramFrame() {
-        return diagramFrame;
-    }
 
     /**
      * undo last drawn code block
