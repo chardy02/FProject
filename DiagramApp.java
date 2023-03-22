@@ -40,6 +40,7 @@ public class DiagramApp extends JFrame {
         JMenu file = new JMenu("File");
         JMenu help = new JMenu("Help");
         JMenu actions = new JMenu("Actions");
+
         JMenuItem newFile = new JMenuItem("New");
         JMenuItem save = new JMenuItem("Save");
         JMenuItem load = new JMenuItem("Load");

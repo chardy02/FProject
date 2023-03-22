@@ -139,18 +139,16 @@ public class Repository extends Observable {
                 if (lines != null && lines.size() > 0) {
                     lines.remove(lines.size() - 1);
                     drawables.remove(drawables.size()-1);
-                    setChanged();
-                    notifyObservers();
                 }
             }
             else {
                 if (codeBlocks != null && codeBlocks.size() > 0) {
                     codeBlocks.remove(codeBlocks.size() - 1);
                     drawables.remove(drawables.size()-1);
-                    setChanged();
-                    notifyObservers("Action undone.");
                 }
             }
+            setChanged();
+            notifyObservers("Action undone.");
         }
     }
 
