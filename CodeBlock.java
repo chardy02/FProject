@@ -2,7 +2,7 @@ import java.awt.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public abstract class CodeBlock implements Serializable {
+public abstract class CodeBlock implements Serializable, Drawable {
     private Shape shape;
 
 //    private ArrayList<Line> inboundLines;
