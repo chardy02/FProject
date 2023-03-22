@@ -14,7 +14,6 @@ public class Repository extends Observable {
     private ArrayList<CodeBlock> codeBlocks;
     private ArrayList<Line> lines;
 
-    boolean blockCreatedLast = false;
     private DiagramApp diagramFrame;
 
     /**
@@ -83,12 +82,11 @@ public class Repository extends Observable {
         if(codeBlocks == null){
             codeBlocks = new ArrayList<>();
         }
-        if(codeBlock != null) {
+        if(codeBlock != null){
             codeBlocks.add(codeBlock);
-            blockCreatedLast = true;
-            setChanged();
-            notifyObservers();
         }
+        setChanged();
+        notifyObservers();
     }
 
     /**
@@ -116,7 +114,6 @@ public class Repository extends Observable {
         if(lines == null) {
             lines = new ArrayList<>();
         }
-        blockCreatedLast = false;
         lines.add(l);
     }
 
@@ -140,16 +137,8 @@ public class Repository extends Observable {
      * undo last drawn code block
      */
     public void undo(){
-        if(blockCreatedLast) {
-            if (codeBlocks != null && codeBlocks.size() > 0) {
-                codeBlocks.remove(codeBlocks.size() - 1);
-                setChanged();
-                notifyObservers();
-                return;
-            }
-        }
-        if (lines != null && lines.size() > 0) {
-            lines.remove(lines.size() - 1);
+        if(codeBlocks != null && codeBlocks.size() > 0) {
+            codeBlocks.remove(codeBlocks.size() - 1);
             setChanged();
             notifyObservers();
         }
@@ -160,7 +149,6 @@ public class Repository extends Observable {
      */
     public void clear(){
         codeBlocks.clear();
-        lines.clear();
         setChanged();
         notifyObservers("Board Cleared.");
     }
