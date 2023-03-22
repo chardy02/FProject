@@ -23,6 +23,7 @@ public class Repository extends Observable {
     private Repository(){
         selectedCodeBlock = "Start";
         codeBlocks = new ArrayList<>();
+        lines = new ArrayList<>();
         drawables = new ArrayList<>();
     }
 
@@ -155,7 +156,7 @@ public class Repository extends Observable {
                     codeBlocks.remove(codeBlocks.size() - 1);
                     drawables.remove(drawables.size()-1);
                     setChanged();
-                    notifyObservers();
+                    notifyObservers("Action undone.");
                 }
             }
         }
@@ -165,8 +166,10 @@ public class Repository extends Observable {
      * Clear the list of code blocks, notifies observer to clear drawing area
      */
     public void clear(){
-        codeBlocks.clear();
-        lines.clear();
+        if(!codeBlocks.isEmpty()) codeBlocks.clear();
+        if(!lines.isEmpty()) lines.clear();
+        if(!drawables.isEmpty()) drawables.clear();
+
         setChanged();
         notifyObservers("Board Cleared.");
     }
