@@ -13,6 +13,7 @@ public class Repository extends Observable {
     private String selectedMenuItem;
     private ArrayList<CodeBlock> codeBlocks;
     private ArrayList<Line> lines;
+    private ArrayList<Object> drawables;
 
 
     /**
@@ -21,6 +22,8 @@ public class Repository extends Observable {
     private Repository(){
         selectedCodeBlock = "Start";
         codeBlocks = new ArrayList<>();
+        lines = new ArrayList<>();
+        drawables = new ArrayList<>();
     }
 
     /**
@@ -81,9 +84,10 @@ public class Repository extends Observable {
         if(codeBlocks == null){
             codeBlocks = new ArrayList<>();
         }
-        if(codeBlock != null){
-            codeBlocks.add(codeBlock);
-        }
+
+        codeBlocks.add(codeBlock);
+        drawables.add(codeBlock);
+
         setChanged();
         notifyObservers();
     }
@@ -114,6 +118,7 @@ public class Repository extends Observable {
             lines = new ArrayList<>();
         }
         lines.add(l);
+        drawables.add(l);
     }
 
     /**
@@ -128,11 +133,24 @@ public class Repository extends Observable {
     /**
      * undo last drawn code block
      */
-    public void undo(){
-        if(codeBlocks != null && codeBlocks.size() > 0) {
-            codeBlocks.remove(codeBlocks.size() - 1);
-            setChanged();
-            notifyObservers();
+    public void undo() {
+        if (drawables != null && drawables.size() > 0) {
+            if (drawables.get(drawables.size() - 1).getClass().equals(Line.class)) {
+                if (lines != null && lines.size() > 0) {
+                    lines.remove(lines.size() - 1);
+                    drawables.remove(drawables.size()-1);
+                    setChanged();
+                    notifyObservers();
+                }
+            }
+            else {
+                if (codeBlocks != null && codeBlocks.size() > 0) {
+                    codeBlocks.remove(codeBlocks.size() - 1);
+                    drawables.remove(drawables.size()-1);
+                    setChanged();
+                    notifyObservers("Action undone.");
+                }
+            }
         }
     }
 
@@ -140,7 +158,10 @@ public class Repository extends Observable {
      * Clear the list of code blocks, notifies observer to clear drawing area
      */
     public void clear(){
-        codeBlocks.clear();
+        if(!codeBlocks.isEmpty()) codeBlocks.clear();
+        if(!lines.isEmpty()) lines.clear();
+        if(!drawables.isEmpty()) drawables.clear();
+
         setChanged();
         notifyObservers("Board Cleared.");
     }
