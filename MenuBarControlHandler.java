@@ -2,19 +2,27 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * @author Ashton Alonge
+ * Controller for the menu bar
+ */
 public class MenuBarControlHandler implements ActionListener {
 
     private JPopupMenu popupMenu;
     private JMenuBar menuBar;
 
+    /**
+     * Constructor
+     * @param menuBar menu bar
+     */
     public MenuBarControlHandler(JMenuBar menuBar){
         this.menuBar = menuBar;
     }
 
-    public void addPopUpMenu(JPopupMenu popupMenu){
-        this.popupMenu = popupMenu;
-    }
-
+    /**
+     * Method to control action when any menu item is selected
+     * @param e action event
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()) {
@@ -64,57 +72,46 @@ public class MenuBarControlHandler implements ActionListener {
                 break;
             case "Clear":
                 Repository.getInstance().clear();
-            case "Print":
-                System.out.println("Print");
-                Repository.getInstance().setProcess("Print");
-                break;
-            case "Exit":
-                System.out.println("Exit");
-                Repository.getInstance().setProcess("Exit");
-                break;
-            case "Return":
-                System.out.println("Return");
-                Repository.getInstance().setProcess("Return");
-                break;
+
         }
 
         if(e.getActionCommand().equals("comboBoxChanged")){
             JComboBox tmp = (JComboBox) e.getSource();
             switch ((String)tmp.getSelectedItem()){
                 case "Start":
-                    System.out.println("Start");
+                    //System.out.println("Start");
                     Repository.getInstance().setSelectedCodeBlock("Start");
                     break;
                 case "End":
-                    System.out.println("End");
+                    //System.out.println("End");
                     Repository.getInstance().setSelectedCodeBlock("End");
                     break;
                 case "Print":
-                    System.out.println("Print");
+                    //System.out.println("Print");
                     Repository.getInstance().setSelectedCodeBlock("Print");
                     break;
                 case "Loop":
-                    System.out.println("Loop");
+                    //System.out.println("Loop");
                     Repository.getInstance().setSelectedCodeBlock("Loop");
                     break;
                 case "If":
-                    System.out.println("If");
+                    //System.out.println("If");
                     Repository.getInstance().setSelectedCodeBlock("If");
                     break;
                 case "Instruction":
-                    System.out.println("Instruction");
+                    //System.out.println("Instruction");
                     Repository.getInstance().setSelectedCodeBlock("Instruction");
                     break;
                 case "Function":
-                    System.out.println("Function");
+                    //System.out.println("Function");
                     Repository.getInstance().setSelectedCodeBlock("Function");
                     break;
                 case "Variable":
-                    System.out.println("Variable");
+                    //System.out.println("Variable");
                     Repository.getInstance().setSelectedCodeBlock("Variable");
                     break;
                 case "Connection":
-                    System.out.println("Connection");
+                    //System.out.println("Connection");
                     Repository.getInstance().setSelectedCodeBlock("Connection");
                     break;
 

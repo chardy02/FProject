@@ -4,9 +4,14 @@ import java.awt.geom.Line2D;
 
 /**
  * @author Ashton Alonge
+ * main class
+ * frame with menu bar, drawing area, and status bar
  */
 public class DiagramApp extends JFrame {
 
+    /**
+     * Constructor to add menu bar with 4 menus, a drawing area, and a status bar
+     */
     public DiagramApp(){
 
         super("Diagram App");
@@ -75,6 +80,10 @@ public class DiagramApp extends JFrame {
 
     }
 
+    /**
+     * main method
+     * @param args
+     */
     public static void main(String [] args){
         DiagramApp app = new DiagramApp();
         app.setSize(700,700);

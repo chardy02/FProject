@@ -2,20 +2,17 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
 
+
 public class WorkingAreaControlHandler implements MouseListener, MouseMotionListener {
     private boolean drawingLine = false;
     private CodeBlock dragging = null;
     private Point dragOffset = null;
     private CodeBlock firstClicked = null;
 
-    public WorkingAreaControlHandler(){
-
-    }
+    public WorkingAreaControlHandler(){ }
 
     @Override
-    public void mouseClicked(MouseEvent e) {
-
-    }
+    public void mouseClicked(MouseEvent e) { }
 
     @Override
     public void mousePressed(MouseEvent e) {

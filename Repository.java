@@ -5,6 +5,7 @@ import java.util.Observable;
 
 /**
  * @author Ashton Alonge
+ * Repository class to handle data (Singleton)
  */
 public class Repository extends Observable {
     private static Repository repository;
@@ -15,11 +16,18 @@ public class Repository extends Observable {
 
     private DiagramApp diagramFrame;
 
+    /**
+     * Constructor to initialize data
+     */
     private Repository(){
         selectedCodeBlock = "Start";
         codeBlocks = new ArrayList<>();
     }
 
+    /**
+     * getter for instance of repository, initializes if null
+     * @return instance of repository
+     */
     public static Repository getInstance(){
         if(repository == null) {
             repository = new Repository();
@@ -27,21 +35,38 @@ public class Repository extends Observable {
         return repository;
     }
 
+    /**
+     * Sets the currently selected code block from menu
+     * @param s code block as a string
+     */
     public void setSelectedCodeBlock(String s){
         selectedCodeBlock = s;
         setChanged();
         notifyObservers(selectedCodeBlock);
     }
 
+    /**
+     * Sets selected menu item from menu bar
+     * @param s
+     */
     public void selectMenuItem(String s){
         selectedMenuItem = s;
         setChanged();
         notifyObservers(selectedMenuItem);
     }
 
+    /**
+     * Sets list of code blocks
+     * @param codeBlocks list of code blocks
+     */
     public void setCodeBlocks(ArrayList<CodeBlock> codeBlocks) {
         this.codeBlocks = codeBlocks;
     }
+
+    /**
+     * getter for data
+     * @return list of code blocks
+     */
     public ArrayList<CodeBlock> getCodeBlocks() {
         if(codeBlocks == null){
             codeBlocks = new ArrayList<>();
@@ -49,6 +74,10 @@ public class Repository extends Observable {
         return codeBlocks;
     }
 
+    /**
+     * adds code block to list
+     * @param codeBlock code block
+     */
     public void addCodeBlock(CodeBlock codeBlock) {
         if(codeBlocks == null){
             codeBlocks = new ArrayList<>();
@@ -59,36 +88,54 @@ public class Repository extends Observable {
         setChanged();
         notifyObservers();
     }
+
+    /**
+     * sets list of lines
+     * @param lines list of lines
+     */
     public void setLines(ArrayList<Line> lines) { this.lines = lines; }
 
+    /**
+     * getter for list of lines
+     * @return list of lines
+     */
     public ArrayList<Line> getLines() {
         if (lines == null) {
             return new ArrayList<>();
         }
         return lines;
     }
+
+    /**
+     * adds line to list of lines, initializes if null
+     * @param l line to be added
+     */
     public void addLine(Line l) {
         if(lines == null) {
             lines = new ArrayList<>();
         }
         lines.add(l);
     }
-    public void setProcess(String process){
-        this.process = process;
-    }
 
-    public String getProcess(){
-        return process;
-    }
-
+    /**
+     * getter for currently selected code block
+     * @return currently selected code block
+     */
     public String getSelectedCodeBlock() {
         return selectedCodeBlock;
     }
 
+    /**
+     * getter for diagram frame
+     * @return diagram frame
+     */
     public DiagramApp getDiagramFrame() {
         return diagramFrame;
     }
 
+    /**
+     * undo last drawn code block
+     */
     public void undo(){
         if(codeBlocks != null && codeBlocks.size() > 0) {
             codeBlocks.remove(codeBlocks.size() - 1);
@@ -97,11 +144,18 @@ public class Repository extends Observable {
         }
     }
 
+    /**
+     * Clear the list of code blocks, notifies observer to clear drawing area
+     */
     public void clear(){
         codeBlocks.clear();
         setChanged();
         notifyObservers("Board Cleared.");
     }
+
+    /**
+     * notifies observer to clear drawing area
+     */
     public void repaintWorkingArea() {
         setChanged();
         notifyObservers();
