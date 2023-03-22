@@ -1,5 +1,4 @@
 public class VariableBlock extends CodeBlock{
-    Drawable drawable;
     /**
      * @author alexbanham
      * Creates a VariableBlock object
@@ -7,6 +6,5 @@ public class VariableBlock extends CodeBlock{
      */
     public VariableBlock(Shape wrapper) {
         super(wrapper,1,1);
-        drawable = wrapper;
     }
 }
