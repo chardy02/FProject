@@ -35,7 +35,7 @@ public class MenuBarControlHandler implements ActionListener {
                 Repository.getInstance().selectMenuItem("File Saved.");
 
                 String saveFile = (String) JOptionPane.showInputDialog(
-                        Repository.getInstance().getDiagramFrame(),
+                        null,
                         "Select a file name to save your diagram",
                         "Save file",
                         1, null, null, "myDiagram" );
@@ -49,7 +49,7 @@ public class MenuBarControlHandler implements ActionListener {
             case "Load":
                 Repository.getInstance().selectMenuItem("File Loaded.");
                 String loadFile = (String) JOptionPane.showInputDialog(
-                        Repository.getInstance().getDiagramFrame(),
+                        null,
                         "Select a save file to load a diagram",
                         "Load file",
                         1);
