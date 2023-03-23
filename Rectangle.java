@@ -16,6 +16,10 @@ public class Rectangle extends Shape {
         super(xPosCenter, yPosCenter,width,height, color);
     }
 
+    /**
+     * Draws the shape on screen
+     * @param g   An instance of type Graphics to draw a representation
+     */
     public void draw(Graphics g) {
         g.setColor(getColor());
         g.fillRect(getXCenter() - getWidth() / 2,getYCenter() - getHeight() / 2, getWidth(), getHeight());
