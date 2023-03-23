@@ -1,6 +1,17 @@
 import java.awt.*;
 
+/**
+ * Represents a BlockFactory for creating different types of CodeBlocks.
+ */
 public class BlockFactory {
+
+    /**
+     * Creates a new CodeBlock of the given type with the specified position.
+     * @param type The type of CodeBlock to create.
+     * @param xPosCenter The x-coordinate of the center position.
+     * @param yPosCenter The y-coordinate of the center position.
+     * @return A new CodeBlock of the given type or null if the type is not recognized.
+     */
     public CodeBlock makeBlock(String type, int xPosCenter, int yPosCenter){
         if(type == null)
             return null;
