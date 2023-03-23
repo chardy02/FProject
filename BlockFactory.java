@@ -2,6 +2,7 @@ import java.awt.*;
 
 /**
  * Represents a BlockFactory for creating different types of CodeBlocks.
+ * @author Alex Banham
  */
 public class BlockFactory {
 

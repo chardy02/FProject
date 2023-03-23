@@ -1,8 +1,13 @@
+
+/**
+ * @author Alex Banham
+ * Creates a VariableBlock object
+ */
 public class VariableBlock extends CodeBlock{
+
     /**
-     * @author alexbanham
-     * Creates a VariableBlock object
-     * @param wrapper the drawable component
+     * Constructs a new VariableBlock with the given shape (wrapper).
+     * @param wrapper The Shape of the VariableBlock.
      */
     public VariableBlock(Shape wrapper) {
         super(wrapper,1,1);
