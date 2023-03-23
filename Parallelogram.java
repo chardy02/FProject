@@ -3,7 +3,6 @@ import java.awt.geom.Path2D;
 /**
  * Parallelogram
  * @author Patrick Whitlock
- * @author Aaron Bettencourt
  * @author Ashton Alonge
  */
 public class Parallelogram extends Shape {
@@ -11,6 +10,7 @@ public class Parallelogram extends Shape {
 
     /**
      * Creates a parallelogram object
+     *
      * @param color Color in which to draw the shape
      * @param xPosCenter X location at which the shape is located
      * @param yPosCenter Y location at which the shape is located

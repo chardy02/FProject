@@ -3,7 +3,6 @@ import java.awt.*;
 /**
  * Rectangle of width 100px, height of 40px
  * @author Patrick Whitlock
- * @author Aaron Bettencourt
  * @author Ashton Alonge
  */
 public class Rectangle extends Shape {

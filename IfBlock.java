@@ -9,6 +9,7 @@ public class IfBlock extends CodeBlock {
     /**
      * Creates an instance of type IfBlock using a shape
      * to represent it.
+     *
      * @param wrapper   The Shape or ShapeDecorator to represent
      *                  this IfBlock.
      */

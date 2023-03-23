@@ -48,6 +48,7 @@ public abstract class Shape implements Drawable, Serializable {
     /**
      * Determines if a pair of x and y coordinates are in the bounds
      * of this Shape and returns the result as a boolean.
+     *
      * @param x     The x coordinate to check.
      * @param y     The y coordinate to check.
      * @return   A value of true as a boolean if the x,y coordinate
@@ -60,6 +61,7 @@ public abstract class Shape implements Drawable, Serializable {
 
     /**
      * Returns the center x position of this Shape as an int.
+     *
      * @return The center x position of this Shape as an int.
      */
     public int getXCenter(){
@@ -68,6 +70,7 @@ public abstract class Shape implements Drawable, Serializable {
 
     /**
      * Sets the center x position of this Shape to a new value.
+     *
      * @param xPosCenter   The new value of the center x position
      *                     of this Shape.
      */
@@ -77,6 +80,7 @@ public abstract class Shape implements Drawable, Serializable {
 
     /**
      * Returns the center y position of this Shape as an int.
+     *
      * @return The center y position of this Shape as an int.
      */
     public int getYCenter(){
@@ -85,6 +89,7 @@ public abstract class Shape implements Drawable, Serializable {
 
     /**
      * Sets the center x position of this Shape to a new value.
+     *
      * @param yPosCenter   The new value of the center x position
      *                     of this Shape.
      */
@@ -94,6 +99,7 @@ public abstract class Shape implements Drawable, Serializable {
 
     /**
      * Returns the height of this Shape as an int.
+     *
      * @return The height of this Shape as an int.
      */
     public int getHeight() {
@@ -102,6 +108,7 @@ public abstract class Shape implements Drawable, Serializable {
 
     /**
      * Returns the width of this Shape as an int.
+     *
      * @return The width of this Shape as an int.
      */
     public int getWidth() {
@@ -110,6 +117,7 @@ public abstract class Shape implements Drawable, Serializable {
 
     /**
      * Returns the color of this Shape as an object of type Color.
+     *
      * @return The color of this Shape as an object of type Color.
      */
     public Color getColor() {

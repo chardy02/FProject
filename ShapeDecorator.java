@@ -12,6 +12,7 @@ public abstract class ShapeDecorator extends Shape {
     /**
      * Constructs an instance of ShapeDecorator given a Shape
      * to decorate.
+     *
      * @param innerShape   The Shape to decorate.
      */
     public ShapeDecorator(Shape innerShape){
@@ -24,6 +25,7 @@ public abstract class ShapeDecorator extends Shape {
     /**
      * Draws the Shape(s) inside of this ShapeDecorator
      * onto the screen.
+     *
      * @param g   The Graphics instance to draw on top of.
      */
     @Override
@@ -33,6 +35,7 @@ public abstract class ShapeDecorator extends Shape {
 
     /**
      * Sets the center x position of this ShapeDecorator to a new value.
+     *
      * @param xPosCenter   The new value of the center x position
      *                     of this ShapeDecorator.
      */
@@ -44,6 +47,7 @@ public abstract class ShapeDecorator extends Shape {
 
     /**
      * Sets the center y position of this ShapeDecorator to a new value.
+     *
      * @param yPosCenter   The new value of the center y position
      *                     of this ShapeDecorator.
      */

@@ -11,6 +11,7 @@ public class StopBlock extends CodeBlock {
     /**
      * Constructs a CodeBlock with at most 1 inbound line
      * and 0 outbound lines that is representable by a shape.
+     *
      * @param wrapper   A Shape representation of this StopBlock
      *                  that may contain more Shapes inside.
      */

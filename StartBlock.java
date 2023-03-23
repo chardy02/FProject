@@ -11,6 +11,7 @@ public class StartBlock extends CodeBlock{
     /**
      * Constructs a CodeBlock with 0 inbound lines
      * and at most 1 outbound line that is representable by a shape.
+     *
      * @param wrapper   A Shape representation of this StartBlock
      *                  that may contain more Shapes inside.
      */

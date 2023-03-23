@@ -1,6 +1,7 @@
 
 /**
  * Represents an InstructionBlock which extends CodeBlock.
+ *
  * @author Connor Hickey
  */
 public class InstructionBlock extends CodeBlock {

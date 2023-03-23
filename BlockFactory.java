@@ -8,6 +8,7 @@ public class BlockFactory {
 
     /**
      * Creates a code block with a given type and x and y coordinates.
+     *
      * @param type   The type of CodeBlock to make as a String.
      * @param xPosCenter   The x position of the center of the CodeBlock to make.
      * @param yPosCenter   The y position of the center of the CodeBlock to make.
