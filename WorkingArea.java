@@ -17,7 +17,7 @@ public class WorkingArea extends JPanel implements Observer {
      * Paints the CodeBlocks and lines to the screen
      * @param g - Graphics object used for drawing
      */
-    public void paintComponent(Graphics g){
+    public void paintComponent(Graphics g) {
         super.paintComponent(g);
         for(CodeBlock codeBlock: Repository.getInstance().getCodeBlocks()) {
             codeBlock.draw(g);

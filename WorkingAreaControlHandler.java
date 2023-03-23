@@ -121,11 +121,10 @@ public class WorkingAreaControlHandler implements MouseListener, MouseMotionList
         }
     }
 
+    /**
+     * Implemented for interface
+     * @param e - MouseEvent
+     */
     @Override
-    public void mouseMoved(MouseEvent e) {
-        if(drawingLine) {
-            ArrayList<Line> lines = Repository.getInstance().getLines();
-            Repository.getInstance().repaintWorkingArea();
-        }
-    }
+    public void mouseMoved(MouseEvent e) {}
 }
