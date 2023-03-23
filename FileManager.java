@@ -12,6 +12,7 @@ public class FileManager {
      * @param filename - String representing filename to read from
      */
     public static void readFile(String filename) {
+        Repository.getInstance().clear();
         // List to store read in blocks
         ArrayList<CodeBlock> blocks = new ArrayList<>();
         try {
